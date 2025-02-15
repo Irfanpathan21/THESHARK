@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" type="image/png" href="https://i.ibb.co/yFMMgZnV/sharklogo.png">    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>The Shark</title>
+</head>
+<body>
+    <header class="Nav_Bar_Class">
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="#">Strategy</a></li>
+          <li><a href="#">Financial</a></li>
+         
+          <li><a href="#">Product</a></li>
+          <li><a href="project.html">Marketing</a></li>
+          <li><a href="https://upg-chatbot.onrender.com/">THE SHARK</a></li>
+        </ul>
+      </header>
+    <div class="container">
+        <h1 align="center" style="color: #23aadf;">THE SHARK</h1>
+        <div class="messages">
+            <span id="user-messages" align="right"></span>
+        
+        </div>
+        <form id="chat-form">
+            <input type="text" id="question" placeholder="Ask a question to THE SHARK." required>
+            <button type="submit" class="send-button" style="border: none; background: none; padding: 0;">
+                <img src="../static/assets/send.png" alt="Send" style="width: 40px; height: 40px;">
+            </button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('chat-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const question = document.getElementById('question').value;
+            fetch('/ask', {
+                method: 'POST',
+                headers: {  
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'question=' + encodeURIComponent(question)
+            })
+            .then(response => response.json())
+            .then(data => {
+                const userMessage = document.createElement('div');
+                userMessage.className = 'user-message';
+                userMessage.innerText = question;
+                document.getElementById('user-messages').appendChild(userMessage);
+
+                const aiMessage = document.createElement('div');
+                aiMessage.className = 'ai-message';
+                aiMessage.innerText = data.answer;
+                document.getElementById('user-messages').appendChild(aiMessage); // Append AI message to the same container
+                document.getElementById('question').value = '';
+            });
+        });
+
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.Nav_Bar_Class ul');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.Nav_Bar_Class ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+    
+</body>
+</html>

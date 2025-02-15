@@ -1,0 +1,337 @@
+body {
+    font-family: Arial, sans-serif; 
+    background-color: #000000; /* Updated background color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/* Optional scrollbar styling */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #23aadf;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1d1e18;
+}
+
+  
+/* Container styling */
+.container {
+    background-color: #ffffff;
+    padding: 30px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    width: 50%; /* Set width to 100% */
+    height: 70vh; /* Set height to 100vh */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Chat header styling */
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.avatar {
+    width: 40px; /* Avatar size */
+    height: 40px;
+    border-radius: 50%; /* Circular avatar */
+    margin-right: 10px;
+}
+
+
+
+
+
+/* Messages container */
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    max-height: 450px;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* User message bubbles */
+.user-message {
+    background-color: #fffdf9;
+    color: rgb(0, 0, 0);
+    padding: 12px;
+    border-radius: 10px;    
+    margin: 30px 0;
+    max-width: 80%;
+    align-self: flex-end;  /* Aligns to right */
+    margin-left: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s;
+}
+
+/* AI message bubbles */
+.ai-message {
+    background-color: #23aadf;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 30px 0;
+    max-width: 80%;
+    align-self: flex-start;  /* Aligns to left */
+    margin-right: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s;
+    text-align: left; /* Align text to left */
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: row; /* Change to row for input and button */
+}
+
+input {
+    padding: 12px;
+    margin-bottom: 0;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    flex-grow: 1; /* Allow input to take available space */
+    margin: 0%;
+}
+
+.send-button {
+    padding: 8px; /* Smaller button */
+   
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+     /* Space between input and button */
+}
+
+.send-button:hover {
+    background: linear-gradient(90deg, #124388, #c26a14);
+}
+.Nav_Bar_Class {
+    position: fixed;
+    width: 100%;
+    height: 75px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    z-index: 1000;
+    padding: 0 2rem; /* Add horizontal padding */
+}
+
+.Nav_Bar_Class ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.Nav_Bar_Class ul li {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Logo specific styling */
+.Nav_Bar_Class ul li:nth-child(4) {
+    margin: 0 45px; /* Give logo more space */
+}
+
+.Nav_Bar_Class ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    padding: 5px 10px; /* Add padding around text */
+}
+
+.Nav_Bar_Class ul li a:hover {
+    color: #23aadf;
+}
+
+.Nav_Bar_Class .logo {
+    width: 75px;
+    height: 75px;
+}
+
+/* Add these styles and modify existing ones */
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Optional scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #23aadf;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1d1e18;
+}
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        margin: 0 10px;
+    }
+    body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+     }
+    .Nav_Bar_Class ul li a:hover {
+            color: #23aadf;
+    }
+    .Nav_Bar_Class ul {
+            display: none;
+            width: 100%;
+            position: absolute;
+            top: 75px;
+            left: 0;
+            background-color: #000;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+    }
+    
+    .Nav_Bar_Class ul li {
+            margin: 15px 0;
+    }
+    
+    .Nav_Bar_Class ul li a {
+            font-size: 18px;
+    }
+    
+    .hamburger {
+            display: flex;
+    }
+    
+        /* Menu visibility toggle using the checkbox */
+    .menu-toggle:checked + .hamburger + ul {
+            display: flex;
+    }
+    
+        /* Animation for the hamburger icon when checked */
+    .menu-toggle:checked + .hamburger div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .menu-toggle:checked + .hamburger div:nth-child(2) {
+            opacity: 0;
+    }
+    
+    .menu-toggle:checked + .hamburger div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+    }
+    .menu-toggle:checked ~ .Nav_Bar_Class .logo-container{
+            display: none;
+    }
+    .hamburger {
+        display: block;
+        order: -1; /* Move to left */
+        margin-right: auto;
+    }
+
+    .Nav_Bar_Class ul {
+        display: none;
+        position: fixed;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #000;
+        flex-direction: column;
+        padding: 20px 0;
+
+    }
+
+    .Nav_Bar_Class ul.active {
+        display: flex;
+    }
+
+    .Nav_Bar_Class ul li {
+        margin: 15px 0;
+    }
+
+    /* Hamburger animation classes */
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    .Nav_Bar_Class ul li img.logo {
+        display: none; /* Hide logo on mobile */
+    }
+    }
+    
+
+    
+    
+
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
