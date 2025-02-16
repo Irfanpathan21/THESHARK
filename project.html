@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT CLUB-UPG</title>
+    <link rel="icon" type="image/x-icon" href="./assets/itclublogo.png">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 80px; /* Add margin to push the grid below the nav bar */
+        }
+
+        .project-card {
+            background:  #fff9f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid #fbb60a;
+            position: relative;
+            height: 100%;
+            min-height: 300px; /* Set a minimum height for uniformity */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translate(2px, -2px);
+            box-shadow: -8px 8px 0px #E12F2B;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #10162F;
+        }
+
+        .card-tech {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-description {
+            color: #333;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        .card-links {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: auto;
+        }
+
+        .social-link {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.2s ease;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+        }
+
+        .social-icon {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .filter-dropdown {
+            margin: 1.5rem ; /* Center horizontally with auto margins */
+            padding: 10px 20px; /* Increase horizontal padding */
+            background-color: #fbb60a;
+            border: 1px solid #E12F2B;
+            border-radius: 5px;
+            max-width: 300px;
+            color: #E12F2B;
+            display: flex; /* Add flexbox */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filter-dropdown label {
+            margin-right: 15px;
+        }
+
+        .filter-dropdown select {
+            padding: 5px 10px;
+            border-radius: 3px;
+            min-width: 150px;
+        }
+       
+    </style>
+</head>
+<body>
+   <!-- Header Section -->
+   <header class="Nav_Bar_Class">
+    <ul>
+      <li><a href="https://irfanpathan21.github.io/IT-CLUB-WEBSITE/index.html">HOME</a></li>
+      <li><a href="#">ABOUT</a></li>
+      <li><a href="#">DEPARTMENTS</a></li>
+      <li><a href="#">EVENTS</a></li>
+      <li><a href="#">PROJECTS</a></li>
+      <li><a href="https://upg-chatbot.onrender.com/">CHAT WITH AI</a></li>
+    </ul>
+  </header>
+
+    <!-- Filter Dropdown -->
+    <div class="filter-dropdown">
+        <label for="language-filter">Filter by Language:</label>
+        <select id="language-filter">
+            <option value="all">All</option>
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <!-- Add more programming languages as needed -->
+        </select>
+    </div>
+
+
+    <div class="project-grid">
+        <div class="project-card" data-language="Python">
+            <div class="card-title">PROJECT 1</div>
+            <div class="card-tech">Python · Data analytics · Data science · Data visualization</div>
+            <div class="card-description">Analyze and interpret data from the National Parks Service on the status of endangered species in some of the most famous national parks.</div>
+            <div class="card-links">
+                <a href="#" class="social-link">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMEM1LjM3NCAwIDAgNS4zNzMgMCAxMmMwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNi4xMS44Mi0uMjYuODItLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43My4wODMtLjczIDEuMjA1LjA4NCAxLjgzOSAxLjIzNyAxLjgzOSAxLjIzNyAxLjA3IDEuODM0IDIuODA3IDEuMzA0IDMuNDkyLjk5Ny4xMDctLjc3NS40MTgtMS4zMDUuNzYyLTEuNjA0LTIuNjY1LS4zMDUtNS40NjctMS4zMzQtNS40NjctNS45MyAwLTEuMzEuNDY1LTIuMzggMS4yMzUtMy4yMi0uMTM1LS4zMDMtLjU0LTEuNTIzLjEwNS0zLjE3NiAwIDAgMS4wMDUtLjMyMiAzLjMgMS4yMy45Ni0uMjY3IDEuOTgtLjM5OSAzLS40MDUgMS4wMi4wMDYgMi4wNC4xMzggMyAuNDA1IDIuMjgtMS41NTIgMy4yODUtMS4yMyAzLjI4NS0xLjIzLjY0NSAxLjY1My4yNCAyLjg3My4xMiAzLjE3Ni43NjUuODQgMS4yMyAxLjkxIDEuMjMgMy4yMiAwIDQuNjEtMi44MDUgNS42MjUtNS40NzUgNS45Mi40Mi4zNi44MSAxLjA5Ni44MSAyLjIydjMuMjljMCAuMzE3LjIxLjY5NC44MjUuNTc3QzIwLjU2NSAyMS43OTYgMjQgMTcuMyAyNCAxMmMwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiIvPjwvc3ZnPg==" alt="GitHub" class="social-icon">
+                </a>
+                <a href="#" class="social-link">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTkuNjE1IDMuMTg0Yy0zLjYwNC0uMjQ2LTExLjYzMS0uMjQ1LTE1LjIzIDAtMy44OTcuMjY2LTQuMzU2IDIuNjItNC4zODUgOC44MTYuMDI5IDYuMTg1LjQ4NCA4LjU0OSA0LjM4NSA4LjgxNiAzLjYuMjQ1IDExLjYyNi4yNDYgMTUuMjMgMCAzLjg5Ny0uMjY2IDQuMzU2LTIuNjIgNC4zODUtOC44MTYtLjAyOS02LjE4NS0uNDg0LTguNTQ5LTQuMzg1LTguODE2ek05LjYyNSAxNS44NzJ2LTguNzVsOC4yNSA0LjM3NS04LjI1IDQuMzc1eiIgZmlsbD0iI2ZmMDAwMCIvPjwvc3ZnPg==" alt="YouTube" class="social-icon">
+                </a>
+            </div>
+        </div>
+        <div class="project-card" data-language="JavaScript">
+            <div class="card-title">PROJECT 2</div>
+            <div class="card-tech">JavaScript · Data science · Machine learning</div>
+            <div class="card-description">Fit a line to data about the honeybee population decline in the United States. Analyze trends and create predictive models.</div>
+            <div class="card-links">
+                <a href="#" class="social-link">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMEM1LjM3NCAwIDAgNS4zNzMgMCAxMmMwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNi4xMS44Mi0uMjYuODItLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43My4wODMtLjczIDEuMjA1LjA4NCAxLjgzOSAxLjIzNyAxLjgzOSAxLjIzNyAxLjA3IDEuODM0IDIuODA3IDEuMzA0IDMuNDkyLjk5Ny4xMDctLjc3NS40MTgtMS4zMDUuNzYyLTEuNjA0LTIuNjY1LS4zMDUtNS40NjctMS4zMzQtNS40NjctNS45MyAwLTEuMzEuNDY1LTIuMzggMS4yMzUtMy4yMi0uMTM1LS4zMDMtLjU0LTEuNTIzLjEwNS0zLjE3NiAwIDAgMS4wMDUtLjMyMiAzLjMgMS4yMy45Ni0uMjY3IDEuOTgtLjM5OSAzLS40MDUgMS4wMi4wMDYgMi4wNC4xMzggMyAuNDA1IDIuMjgtMS41NTIgMy4yODUtMS4yMyAzLjI4NS0xLjIzLjY0NSAxLjY1My4yNCAyLjg3My4xMiAzLjE3Ni43NjUuODQgMS4yMyAxLjkxIDEuMjMgMy4yMiAwIDQuNjEtMi44MDUgNS42MjUtNS40NzUgNS45Mi40Mi4zNi44MSAxLjA5Ni44MSAyLjIydjMuMjljMCAuMzE3LjIxLjY5NC44MjUuNTc3QzIwLjU2NSAyMS43OTYgMjQgMTcuMyAyNCAxMmMwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiIvPjwvc3ZnPg==" alt="GitHub" class="social-icon">
+                </a>
+                <a href="#" class="social-link">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTkuNjE1IDMuMTg0Yy0zLjYwNC0uMjQ2LTExLjYzMS0uMjQ1LTE1LjIzIDAtMy44OTcuMjY2LTQuMzU2IDIuNjItNC4zODUgOC44MTYuMDI5IDYuMTg1LjQ4NCA4LjU0OSA0LjM4NSA4LjgxNiAzLjYuMjQ1IDExLjYyNi4yNDYgMTUuMjMgMCAzLjg5Ny0uMjY2IDQuMzU2LTIuNjIgNC4zODUtOC44MTYtLjAyOS02LjE4NS0uNDg0LTguNTQ5LTQuMzg1LTguODE2ek05LjYyNSAxNS44NzJ2LTguNzVsOC4yNSA0LjM3NS04LjI1IDQuMzc1eiIgZmlsbD0iI2ZmMDAwMCIvPjwvc3ZnPg==" alt="YouTube" class="social-icon">
+                </a>
+            </div>
+        </div>
+        <div class="project-card" data-language="Python">
+            <div class="card-title">PROJECT 1</div>
+            <div class="card-tech">Python · Data analytics · Data science · Data visualization</div>
+            <div class="card-description">Analyze and interpret data from the National Parks Service on the status of endangered species in some of the most famous national parks.</div>
+            <div class="card-links">
+                <a href="#" class="social-link">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMEM1LjM3NCAwIDAgNS4zNzMgMCAxMmMwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNi4xMS44Mi0uMjYuODItLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43My4wODMtLjczIDEuMjA1LjA4NCAxLjgzOSAxLjIzNyAxLjgzOSAxLjIzNyAxLjA3IDEuODM0IDIuODA3IDEuMzA0IDMuNDkyLjk5Ny4xMDctLjc3NS40MTgtMS4zMDUuNzYyLTEuNjA0LTIuNjY1LS4zMDUtNS40NjctMS4zMzQtNS40NjctNS45MyAwLTEuMzEuNDY1LTIuMzggMS4yMzUtMy4yMi0uMTM1LS4zMDMtLjU0LTEuNTIzLjEwNS0zLjE3NiAwIDAgMS4wMDUtLjMyMiAzLjMgMS4yMy45Ni0uMjY3IDEuOTgtLjM5OSAzLS40MDUgMS4wMi4wMDYgMi4wNC4xMzggMyAuNDA1IDIuMjgtMS41NTIgMy4yODUtMS4yMyAzLjI4NS0xLjIzLjY0NSAxLjY1My4yNCAyLjg3My4xMiAzLjE3Ni43NjUuODQgMS4yMyAxLjkxIDEuMjMgMy4yMiAwIDQuNjEtMi44MDUgNS42MjUtNS40NzUgNS45Mi40Mi4zNi44MSAxLjA5Ni44MSAyLjIydjMuMjljMCAuMzE3LjIxLjY5NC44MjUuNTc3QzIwLjU2NSAyMS43OTYgMjQgMTcuMyAyNCAxMmMwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiIvPjwvc3ZnPg==" alt="GitHub" class="social-icon">
+                </a>
+                <a href="#" class="social-link">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTkuNjE1IDMuMTg0Yy0zLjYwNC0uMjQ2LTExLjYzMS0uMjQ1LTE1LjIzIDAtMy44OTcuMjY2LTQuMzU2IDIuNjItNC4zODUgOC44MTYuMDI5IDYuMTg1LjQ4NCA4LjU0OSA0LjM4NSA4LjgxNiAzLjYuMjQ1IDExLjYyNi4yNDYgMTUuMjMgMCAzLjg5Ny0uMjY2IDQuMzU2LTIuNjIgNC4zODUtOC44MTYtLjAyOS02LjE4NS0uNDg0LTguNTQ5LTQuMzg1LTguODE2ek05LjYyNSAxNS44NzJ2LTguNzVsOC4yNSA0LjM3NS04LjI1IDQuMzc1eiIgZmlsbD0iI2ZmMDAwMCIvPjwvc3ZnPg==" alt="YouTube" class="social-icon">
+                </a>
+            </div>
+        </div>
+        <div class="project-card" data-language="Python">
+            <div class="card-title">PROJECT 1</div>
+            <div class="card-tech">Python · Data analytics · Data science · Data visualization</div>
+            <div class="card-description">Analyze and interpret data from the National Parks Service on the status of endangered species in some of the most famous national parks.</div>
+            <div class="card-links">
+                <a href="#" class="social-link">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMEM1LjM3NCAwIDAgNS4zNzMgMCAxMmMwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNi4xMS44Mi0uMjYuODItLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43My4wODMtLjczIDEuMjA1LjA4NCAxLjgzOSAxLjIzNyAxLjgzOSAxLjIzNyAxLjA3IDEuODM0IDIuODA3IDEuMzA0IDMuNDkyLjk5Ny4xMDctLjc3NS40MTgtMS4zMDUuNzYyLTEuNjA0LTIuNjY1LS4zMDUtNS40NjctMS4zMzQtNS40NjctNS45MyAwLTEuMzEuNDY1LTIuMzggMS4yMzUtMy4yMi0uMTM1LS4zMDMtLjU0LTEuNTIzLjEwNS0zLjE3NiAwIDAgMS4wMDUtLjMyMiAzLjMgMS4yMy45Ni0uMjY3IDEuOTgtLjM5OSAzLS40MDUgMS4wMi4wMDYgMi4wNC4xMzggMyAuNDA1IDIuMjgtMS41NTIgMy4yODUtMS4yMyAzLjI4NS0xLjIzLjY0NSAxLjY1My4yNCAyLjg3My4xMiAzLjE3Ni43NjUuODQgMS4yMyAxLjkxIDEuMjMgMy4yMiAwIDQuNjEtMi44MDUgNS42MjUtNS40NzUgNS45Mi40Mi4zNi44MSAxLjA5Ni44MSAyLjIydjMuMjljMCAuMzE3LjIxLjY5NC44MjUuNTc3QzIwLjU2NSAyMS43OTYgMjQgMTcuMyAyNCAxMmMwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiIvPjwvc3ZnPg==" alt="GitHub" class="social-icon">
+                </a>
+                <a href="#" class="social-link">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTkuNjE1IDMuMTg0Yy0zLjYwNC0uMjQ2LTExLjYzMS0uMjQ1LTE1LjIzIDAtMy44OTcuMjY2LTQuMzU2IDIuNjItNC4zODUgOC44MTYuMDI5IDYuMTg1LjQ4NCA4LjU0OSA0LjM4NSA4LjgxNiAzLjYuMjQ1IDExLjYyNi4yNDYgMTUuMjMgMCAzLjg5Ny0uMjY2IDQuMzU2LTIuNjIgNC4zODUtOC44MTYtLjAyOS02LjE4NS0uNDg0LTguNTQ5LTQuMzg1LTguODE2ek05LjYyNSAxNS44NzJ2LTguNzVsOC4yNSA0LjM3NS04LjI1IDQuMzc1eiIgZmlsbD0iI2ZmMDAwMCIvPjwvc3ZnPg==" alt="YouTube" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const filterSelect = document.getElementById('language-filter');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterSelect.addEventListener('change', function() {
+            const selectedLanguage = this.value;
+
+            projectCards.forEach(card => {
+                if (selectedLanguage === 'all' || card.getAttribute('data-language') === selectedLanguage) {
+                    card.style.display = 'flex'; // Show the card
+                } else {
+                    card.style.display = 'none'; // Hide the card
+                }
+            });
+        });
+    </script>
+</body>
+</html>

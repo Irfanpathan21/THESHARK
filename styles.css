@@ -1,0 +1,423 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+/* Add these styles */
+.register-container {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+  }
+  
+  .register-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #23aadf;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+  }
+  
+  .register-btn:hover {
+    background-color: #23aadf;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(50, 149, 176, 0.3);
+  }
+/* Navigation Bar Styling */
+.Nav_Bar_Class {
+    position: static;
+    width: 100%;
+    height: 75px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    z-index: 1000;
+    padding: 0 2rem; /* Add horizontal padding */
+}
+
+.Nav_Bar_Class ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.Nav_Bar_Class ul li {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Logo specific styling */
+.Nav_Bar_Class ul li:nth-child(4) {
+    margin: 0 45px; /* Give logo more space */
+}
+
+.Nav_Bar_Class ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    padding: 5px 10px; /* Add padding around text */
+}
+
+.Nav_Bar_Class ul li a:hover {
+    color: #23aadf;
+}
+
+.Nav_Bar_Class .logo {
+    width: 75px;
+    height: 75px;
+}
+
+.section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1.25rem;
+    background-color: #fff9f0;
+    text-align: center;
+    color: #083E32;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .video-container {
+    width: 100%;
+    max-width: 48rem;
+    margin-top: 2.5rem;
+    position: relative;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    background: #000;
+  }
+
+  .thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .play-button {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .play-icon {
+    opacity: 0.8;
+    border-radius: 0.75rem;
+    background-color: black;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .video-container:hover .play-icon {
+    background-color: #23aadf;
+  }
+
+  .youtube-embed {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 1.875rem;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+  }
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .Nav_Bar_Class ul li {
+        margin: 0 20px;
+    }
+    
+    .Nav_Bar_Class ul li:nth-child(4) {
+        margin: 0 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Nav_Bar_Class ul li {
+        padding: 0 10px;
+    }
+    
+    .Nav_Bar_Class ul li a {
+        font-size: 14px;
+    }
+}
+
+/* Main Content Styling */
+main {
+    flex: 1; /* Takes up the remaining space */
+    position: relative;
+    margin-top: 75px; /* Accounts for the fixed header */
+}
+
+/* Footer Styling */
+.Footer_Bg_Class {
+    width: 95%;
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    margin-top: auto; /* Ensures footer sticks to the bottom */
+}
+
+/* Footer container to align sections */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Styling for footer sections */
+.footer-section {
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #e0e0e0;
+}
+
+.footer-section p, .footer-section a {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #b0b0b0;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #23aadf;
+}
+
+.footer-logo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.footer-logo img {
+    width: 170px;
+    height: 170px;
+    margin-bottom: 10px;
+}
+
+.footer-social {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-social a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.2);
+}
+
+/* Base styles for SVG text animation */
+.engageAnimate, .createAnimate, .impactAnimate {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styling for the SVG container */
+.engage svg, .create svg, .impact svg {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styling for the text within the SVG */
+svg text {
+    text-transform: uppercase;
+    animation: strokeAndFade 5s infinite alternate;
+    stroke-width: 2;
+    stroke: #23aadf;
+    font-size: 80px;
+}
+
+/* Keyframe animation for stroke and fade-in/fade-out effect */
+@keyframes strokeAndFade {
+    0% {
+        opacity: 0;
+        fill: rgba(72, 138, 20, 0);
+        stroke: #E12F2B;
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 50%;
+        stroke-width: 2;
+    }
+    14% {
+        opacity:  0.4;
+        fill: rgba(72, 138, 20, 0);
+        stroke: #E12F2B;
+    }
+    50% {
+        opacity: 1;
+        fill: #E12F2B;
+        stroke: #E12F2B;
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 50% 0;
+        stroke-width: 0;
+    }
+    100% {
+        opacity: 0;
+        fill: rgba(72, 138, 20, 0);
+        stroke:  #E12F2B;
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 50%;
+        stroke-width: 2;
+    }
+}
+
+/* Styling for individual words */
+
+/* Top Left - ENGAGE */
+.engageAnimate {
+    top: 15%; /* Adjust to vertically center *//* Centers horizontally */
+    font-size: 150px;
+    color:  #E12F2B; /* Different color for this word */
+}
+
+/* Centered - EDUCATE */
+.educateAnimate {
+    top: 40%; /* Adjust to vertically center */
+    left: 50%;
+    font-size: 150px;   /* Larger size */
+    color: #F26457; /* Different color for this word */
+}
+
+/* Bottom Right - EVOLVE */
+.evolveAnimate {
+    top: 55%;  /* Adjust to vertically center */
+    right: 10%;
+    font-size: 150px;   /* Slightly smaller size */
+    color:  #BA1E1A;  /* Different color for this word */
+}
+
+/* Optional styles to reset margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Optional scrollbar styling */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #23aadf;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1d1e18;
+}
+
+  
+  /* ---- particles.js container ---- */
+  #particles-js {
+    
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    background-image: url("./assets/sharklogo.png");
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: 50% 50%;
+  }
+  /* ---- stats.js ---- */
+  .count-particles {
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: #13E8E9;
+    font-size: .8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+  }
+  .js-count-particles {
+    font-size: 1.1em;
+  }
+  #stats, .count-particles {
+   
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  #stats {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+  }
+  .count-particles {
+    border-radius: 0 0 3px 3px;
+  }
